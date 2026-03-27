@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="settings.css">
+  <title>Tab Suspender Settings</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Tab Suspender Settings</h1>
+
+    <section class="card">
+      <h2>Suspension</h2>
+      <div class="field">
+        <label for="timeout-select">Suspend tabs after</label>
+        <select id="timeout-select">
+          <option value="5">5 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="30" selected>30 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="120">2 hours</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Protection</h2>
+      <label class="toggle-row">
+        <span>Never suspend pinned tabs</span>
+        <input type="checkbox" id="protect-pinned" checked>
+      </label>
+      <label class="toggle-row">
+        <span>Never suspend tabs playing audio</span>
+        <input type="checkbox" id="protect-audible" checked>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Whitelisted Domains</h2>
+      <p class="hint">Tabs on these domains will never be suspended.</p>
+      <div id="whitelist-container">
+        <div class="whitelist-empty" id="whitelist-empty">No domains whitelisted yet.</div>
+      </div>
+      <div class="add-domain">
+        <input type="text" id="domain-input" placeholder="example.com" class="input">
+        <button id="add-domain-btn" class="btn btn-primary btn-sm">Add</button>
+      </div>
+      <div id="whitelist-limit" class="hint" style="display:none"></div>
+    </section>
+
+    <div id="status" class="status" style="display:none"></div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

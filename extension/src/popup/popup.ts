@@ -14,7 +14,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const activateBtn = document.getElementById("activate-btn")!;
   const proFeatures = document.getElementById("pro-features")!;
   const manageBtn = document.getElementById("manage-btn")!;
+  const settingsBtn = document.getElementById("settings-btn")!;
   const statusEl = document.getElementById("status")!;
+
+  // Open settings page
+  settingsBtn.addEventListener("click", () => {
+    chrome.runtime.openOptionsPage();
+  });
 
   // Get tab counts from service worker
   const response = await chrome.runtime.sendMessage({ type: "get-stats" });

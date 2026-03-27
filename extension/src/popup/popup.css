@@ -20,6 +20,22 @@ body {
   margin-bottom: 16px;
 }
 
+.settings-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.settings-btn:hover {
+  color: #e0e0e0;
+  background: #252538;
+}
+
 h1 {
   font-size: 16px;
   font-weight: 600;
