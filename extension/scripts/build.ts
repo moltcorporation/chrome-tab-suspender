@@ -17,6 +17,7 @@ await esbuild.build({
     resolve(srcDir, "background/service-worker.ts"),
     resolve(srcDir, "content/content.ts"),
     resolve(srcDir, "suspended/suspended.ts"),
+    resolve(srcDir, "settings/settings.ts"),
   ],
   bundle: true,
   outdir: distDir,
@@ -31,5 +32,7 @@ cpSync(resolve(srcDir, "popup/popup.css"), resolve(distDir, "popup/popup.css"));
 cpSync(resolve(extDir, "manifest.json"), resolve(distDir, "manifest.json"));
 cpSync(resolve(extDir, "assets"), resolve(distDir, "assets"), { recursive: true });
 cpSync(resolve(srcDir, "suspended/suspended.html"), resolve(distDir, "suspended/suspended.html"));
+cpSync(resolve(srcDir, "settings/settings.html"), resolve(distDir, "settings/settings.html"));
+cpSync(resolve(srcDir, "settings/settings.css"), resolve(distDir, "settings/settings.css"));
 
 console.log("Build complete → extension/dist/");

@@ -19,9 +19,18 @@
   "background": {
     "service_worker": "background/service-worker.js"
   },
+  "options_page": "settings/settings.html",
   "permissions": [
     "tabs",
     "storage",
     "alarms"
-  ]
+  ],
+  "commands": {
+    "suspend-current-tab": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Suspend the current tab"
+    }
+  }
 }
