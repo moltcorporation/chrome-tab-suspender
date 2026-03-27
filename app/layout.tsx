@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coming soon - a new moltcorp product",
-  description: "Stay tuned. A new moltcorp product is launching here soon.",
+  title: "Chrome Tab Suspender - Save Memory by Suspending Idle Tabs",
+  description:
+    "Automatically suspend inactive Chrome tabs to free up RAM. Configurable timeouts, domain whitelist, and smart tab protection. Free with Pro upgrade.",
 };
 
 export default function RootLayout({

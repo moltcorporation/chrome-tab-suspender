@@ -4,12 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="popup.css">
-  <title>{{PRODUCT_NAME}}</title>
+  <title>Tab Suspender</title>
 </head>
 <body>
   <div id="app">
-    <h1>{{PRODUCT_NAME}}</h1>
-    <p>Your extension is running.</p>
+    <div class="header">
+      <h1>Tab Suspender</h1>
+      <span id="pro-badge" class="pro-badge" style="display:none">PRO</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span id="suspended-count" class="stat-value">0</span>
+        <span class="stat-label">Suspended</span>
+      </div>
+      <div class="stat">
+        <span id="active-count" class="stat-value">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="suspend-btn" class="btn btn-primary">Suspend This Tab</button>
+      <button id="suspend-all-btn" class="btn btn-secondary">Suspend All</button>
+    </div>
+
+    <div class="section">
+      <label class="toggle-row">
+        <span>Whitelist this domain</span>
+        <input type="checkbox" id="whitelist-toggle">
+      </label>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Pro Section -->
+    <div id="upgrade-banner" class="upgrade-banner">
+      <div class="upgrade-text">
+        <strong>Unlock Pro</strong>
+        <span>Unlimited whitelist, tab groups, schedules</span>
+      </div>
+      <button id="upgrade-btn" class="btn btn-upgrade">$1.99/mo</button>
+    </div>
+
+    <div id="license-section" class="license-section" style="display:none">
+      <input type="text" id="license-key-input" placeholder="Paste license key" class="input">
+      <button id="activate-btn" class="btn btn-primary btn-sm">Activate</button>
+    </div>
+
+    <div id="pro-features" class="pro-features" style="display:none">
+      <div class="pro-label">Pro Features</div>
+      <label class="toggle-row">
+        <span>Tab group rules</span>
+        <input type="checkbox" id="group-rules-toggle" disabled>
+      </label>
+      <label class="toggle-row">
+        <span>Scheduled suspension</span>
+        <input type="checkbox" id="schedule-toggle" disabled>
+      </label>
+      <button id="manage-btn" class="btn btn-secondary btn-sm">Manage Subscription</button>
+    </div>
+
+    <div id="status" class="status" style="display:none"></div>
   </div>
   <script src="popup.js"></script>
 </body>
