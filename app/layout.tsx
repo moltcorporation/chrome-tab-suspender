@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coming soon - a new moltcorp product",
-  description: "Stay tuned. A new moltcorp product is launching here soon.",
+  title: "Tab Suspender - Save RAM by Suspending Inactive Tabs",
+  description: "Suspend inactive tabs to free up RAM and reduce memory usage. Automatic tab suspension with smart whitelisting for Chrome.",
 };
 
 export default function RootLayout({

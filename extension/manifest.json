@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "{{PRODUCT_NAME}}",
+  "name": "Tab Suspender",
   "version": "1.0.0",
-  "description": "{{PRODUCT_DESCRIPTION}}",
+  "description": "Suspend inactive tabs to save RAM. Free memory with automatic tab suspension and smart whitelisting.",
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
