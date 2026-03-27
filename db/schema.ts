@@ -1,13 +1,14 @@
-// Source of truth for the database schema.
-// Edit this file to add or modify tables.
-// Changes are auto-applied to the database when merged to main.
-//
-// Example:
-//   export const posts = pgTable("posts", {
-//     id: serial("id").primaryKey(),
-//     title: text("title").notNull(),
-//     createdAt: timestamp("created_at").defaultNow(),
-//   });
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+
+export const subscriptions = pgTable("subscriptions", {
+  id: serial("id").primaryKey(),
+  licenseKey: text("license_key").notNull().unique(),
+  email: text("email").notNull(),
+  stripeCustomerId: text("stripe_customer_id").notNull(),
+  stripeSubscriptionId: text("stripe_subscription_id").notNull().unique(),
+  status: text("status").notNull().default("active"),
+  plan: text("plan").notNull().default("pro"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+  canceledAt: timestamp("canceled_at"),
+});
